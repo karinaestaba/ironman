@@ -1,0 +1,495 @@
+/** Reset Components */
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, a, ol, li,
+article, figure, figcaption, footer, header, section, summary{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, figcaption, figure, 
+footer, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+/** Vars **/
+
+:root{
+    --brand-black: #151615;
+    --brand-red:   #5B0101;
+    --brand-white: #FFFFFF;
+    --brand-gray-l:#E5E5E5;
+    --brand-gold:  #B59E5D;
+
+    --font-size-default: 16px;
+    --font-family-default: 'Montserrat', sans-serif;
+}
+
+
+/** Layout */
+
+html,body{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body{			
+    /*border: 5px solid orange;*/
+    font-size: var(--font-size-default);
+    color: var(--brand-gray-l);
+    font-family: var(--font-family-default);
+}
+
+.container{
+    width: 80%;
+    max-width: 1900px;
+    margin: 0 auto;
+    /*border: 5px solid orange;*/
+}
+
+.spacing{
+    padding: 3rem 3rem;
+}
+
+.spacing-x{
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.spacing-y{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.spacing-b{
+    padding-bottom: 3rem;	
+}
+
+.no-spacing{
+    padding: 0;
+}
+
+.text-center{
+    text-align: center;
+}
+
+p{
+    padding-bottom: 1.5rem;
+    line-height: 1.2rem;
+}
+
+p:last-child{
+    padding-bottom: 0;
+}
+
+/** Font */
+.h1{
+    font-size: 3rem;
+}
+.h2{
+    font-size: 2rem;
+}
+
+.h3{
+    font-size: 1.2rem;
+}
+
+.split-title .h2{
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.split-title .h4{
+    font-size: 1.8rem;
+}
+
+.title-section{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5em;
+}
+
+/** Components */
+
+li{
+    margin-bottom: 1.5rem;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin:0 auto;
+    object-fit: cover;
+    width: 100%;
+}
+
+figure{
+    position: relative;
+    display: flex;
+}
+
+.overlay{
+    background: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .2;
+}
+
+.overlay-diagonal{
+    -webkit-clip-path: polygon(100% 1%, 0% 100%, 100% 100%);
+    clip-path: polygon(100% 1%, 0% 100%, 100% 100%);
+    opacity: .4;
+    top: 20%;
+}
+
+.section-hero{
+    /*border: 5px solid pink;*/
+    position: relative;
+}
+.section-hero figure{
+    position: relative;
+}
+
+.section-hero .title{
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    z-index: 1;
+}
+.section-hero .title span{
+    color: white;
+    display: block;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.section-hero .title span:first-child{
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+.section-hero .title span:nth-child(2){
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 5rem;
+}
+.section-hero .title span:last-child{
+    font-size: 1.8rem;
+}
+.section-resume-bio{
+    /*border: 5px solid red;*/
+    background-color: var(--brand-black);
+}
+.section-memories{
+    /*border: 5px solid purple;*/
+    background-color: var(--brand-black);
+}
+
+.section-bio-tony-stark{
+    /*border: 5px solid green;*/
+    background-color: var(--brand-red);
+    position: relative;
+}
+
+.section-bio-tony-stark::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform-origin: top right;
+    transform: skewY(-4deg);
+}
+
+.section-bio-tony-stark .content{
+    width: 100%;
+}
+
+.section-bio-iron-man{
+    /*border: 5px solid brown;*/
+    background-color: var(--brand-black);
+    position: relative;
+    z-index: -2;
+}
+
+.section-bio-iron-man .title-section{
+    text-align: center;
+}
+.section-explore{
+    /*border: 5px solid cyan;*/
+    background-color: var(--brand-black);			
+}
+.section-explore > .container-grid{
+    display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      /*grid-auto-rows: 100%; */
+      grid-auto-rows: 300px;
+}
+
+.section-explore .img-overlap{
+     grid-column-start: 1; 
+      grid-column-end: 3; 
+      grid-row-start: 1; 
+      grid-row-end: 3;
+  
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+}
+
+.section-explore  .split-title{
+    grid-column-start: 3; 
+      grid-row-start: 1; 
+      grid-row-end: 3; 		  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+}
+
+.split-title > .items-container{
+      display: grid;
+      
+      grid-template-columns: repeat(5, 1fr); 
+      grid-template-rows: repeat(3, 1fr);
+      padding: 1em;
+}
+
+.split-title > .items-container > .text-1{
+    grid-column-start: 1; 
+      grid-column-end: 4; 
+      grid-row-start: 1; 
+      grid-row-end: 2;
+      display: flex;
+      align-items: center;
+}
+
+.split-title > .items-container > .text-2{
+  grid-column-start: 1; 
+  grid-column-end: 5; 
+  grid-row-start: 2; 
+  grid-row-end: 3;  
+  display: flex;
+  align-items: center;
+}
+
+.split-title > .items-container > .text-3{
+  grid-column-start: 2; 
+  grid-column-end: 6; 
+  grid-row-start: 3; 
+  grid-row-end: 4;  
+  display: flex;
+  align-items: center;
+  padding-left: 1.3rem;
+}
+
+.img-overlap figure{
+    display: initial;
+}
+
+.bg-img{
+    height: 100%;
+}
+
+.img-overlap figure:first-child{
+    /*border: 5px solid #b4f2e1;*/
+    grid-column-start: 2; 
+    grid-column-end: 8; 
+    grid-row-start: 1; 
+    grid-row-end: 10;  
+}
+
+.img-overlap figure:first-child .bg-img{
+
+      background-image: url(../img/ironman7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.img-overlap figure:last-child{
+      /*border: 5px solid purple;  */
+      grid-column-start: 4; 
+      grid-column-end: 10; 
+      grid-row-start: 2; 
+      grid-row-end: 11;
+}
+
+.img-overlap figure:last-child .bg-img{
+      background-image: url(../img/ironman3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.img-overlap img{
+  min-height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery{
+    /*border: 5px solid purple;*/
+    display: flex;
+}
+
+.gallery > figure{
+    flex: 1;
+    padding: 1em;
+}
+
+
+.split-content{
+    /*border: 5px solid gray;*/
+    display: flex;
+    align-items: center;
+}
+
+.split-content > .description{
+    flex-basis: 55%;
+    padding: 1em 2em;
+}
+
+.split-content > figure{
+    flex-basis: 45%;
+    padding: 1em 2em;		
+}
+
+.split-content > figure > img{
+    min-height: 400px;			
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cta-description{
+    text-align: center;
+}
+
+footer{
+    /*border: 5px solid black;*/
+    background-color: var(--brand-red);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(30px, 50px));
+    padding-bottom: 2rem;
+}
+
+footer > div{
+    position: relative;			
+}
+
+footer > .item-1{			
+    background-color: var(--brand-black);
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+footer > .item-2{
+    background-color: var(--brand-black);
+    grid-column: 2/3;
+    grid-row: 1/3;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+footer > .item-3{
+    background-color: var(--brand-black);
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+footer > .item-4{
+    background-color: var(--brand-red);
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+footer > .item-5{
+    background-color: var(--brand-red);
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+footer .item-1::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brand-red);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform-origin: top right;
+    transform: skewY(-6deg);
+}
+
+footer .item-3::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brand-red);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform-origin: left top;
+    transform: skewY(6deg);
+}
+
+.sr-only{
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+}
+
+.cta-action{
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: .3rem;
+    font-weight: bold;
+    padding-top: .5rem;
+}
+
+.history > h4.border-bottom{
+    border-bottom: 1px solid white;
+    display: inline;
+}
+
+.history > h4 + p{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.history:last-child > h4 + p{
+    margin-top: 1rem;
+    margin-bottom: inherit;
+}
