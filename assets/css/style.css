@@ -187,6 +187,7 @@ figure{
     font-weight: bold;
     text-transform: uppercase;
     font-size: 5rem;
+    line-height: 6rem;
 }
 .section-hero .title span:last-child{
     font-size: 1.8rem;
@@ -301,6 +302,7 @@ figure{
   display: flex;
   align-items: center;
   padding-left: 1.3rem;
+  font-size: 4rem;
 }
 
 .img-overlap figure{
@@ -493,3 +495,169 @@ footer .item-3::after {
     margin-top: 1rem;
     margin-bottom: inherit;
 }
+
+@media (max-width: 768px){
+    .container{
+        width: auto;
+    }
+
+    .gallery{
+        flex-direction: column;
+    }
+
+    .spacing{
+        padding: 3rem 1.5rem;
+    }
+
+    .spacing-x{
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    .picture-overlay img{
+        min-height: 200px;
+    }
+
+    .section-bio-iron-man .spacing{
+        padding: 0;
+        padding: 0 0.5rem;
+    }
+
+    .split-content{
+        display: block;
+    }
+
+    .split-content > .description{
+        padding: 0 1rem;
+    }
+
+    .split-content > .description > ul{
+        margin-bottom: 0;
+    }
+
+    .split-title > .items-container{
+        margin: 0 auto;
+    }
+
+    .split-content > figure{
+        display: none;
+    }
+
+    .split-title .h2{
+        line-height: 4rem;
+    }
+
+    .description ul{
+        padding: 0 0 2.5rem;
+    }
+
+    .title-section{
+        padding-top: 0;
+    }
+
+    .section.section-hero{
+        min-height: 100vh;
+    }
+
+    .section-hero .title{
+        bottom: -1rem;
+    }
+
+    .section-hero figure {
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .section-hero .title span:first-child {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+
+    .section-hero .title span:nth-child(2) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .section-hero .title{
+        left: 1rem;
+    }
+
+    .section-hero .title span:last-child {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    .overlay-diagonal{
+        display: none;
+    }
+
+    .section-bio-iron-man{
+        padding-top: 5rem;
+        padding-bottom: 0;
+    }
+
+    .section-explore > .container-grid{
+        padding-bottom: 0;
+        padding-top: 0;
+        display: block;
+        position: relative;
+    }
+
+    .section-explore > .container-grid + .container{
+        padding-bottom: 5rem;
+    }
+
+    .section-explore .img-overlap{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .img-overlap figure {
+        display: block;
+        flex-grow: 1;
+    }
+
+    .img-overlap figure:first-child{
+        display: block;
+    }
+
+    .img-overlap figure:first-child .bg-img{
+        min-height: 300px;
+    }
+
+    .img-overlap figure:last-child .bg-img{
+        min-height: 300px;
+    }
+
+    /*.gallery .overlay{
+        background: none;
+    }*/
+
+    .history > h4.border-bottom{
+        line-height: 1.5rem;
+    }
+}
+
+@media (max-width: 468px){
+    .section-explore .img-overlap{
+        display: block;
+        position: relative;
+    }
+    
+    .img-overlap figure:last-child{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+p{
+    line-height: inherit;
+}
+
+body{
+    line-height: 1.6rem;
+}
+
