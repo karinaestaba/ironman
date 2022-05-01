@@ -22,16 +22,21 @@ body {
 
 ul {
     list-style: none;
+    padding: 0 1rem;
 }
 
 /** Vars **/
 
 :root{
-    --brand-black: #151615;
+    --brand-black: #010101;
+    /* --brand-red:   #641312; */
     --brand-red:   #5B0101;
     --brand-white: #FFFFFF;
-    --brand-gray-l:#E5E5E5;
+    --brand-gray-l: #F0F0F0;
     --brand-gold:  #B59E5D;
+    --border-color: #2b2a2a;
+
+    --shadow: rgba(19, 19, 19, 0.22) 0px 14px 28px, rgba(15, 15, 15, 0.22) 0px 10px 10px;
 
     --font-size-default: 16px;
     --font-family-default: 'Montserrat', sans-serif;
@@ -48,6 +53,7 @@ html,body{
 body{			
     /*border: 5px solid orange;*/
     font-size: var(--font-size-default);
+    line-height: 1;
     color: var(--brand-gray-l);
     font-family: var(--font-family-default);
 }
@@ -128,6 +134,15 @@ li{
     margin-bottom: 1.5rem;
 }
 
+li::before {
+    content: "⛛";
+    margin-left: -20px;
+    margin-right: 10px;
+    opacity: .3;
+    box-shadow: var(--shadow);
+    color: #710000;
+}
+
 img{
     max-width: 100%;
     height: auto;
@@ -152,27 +167,34 @@ figure{
     opacity: .2;
 }
 
-.overlay-diagonal{
-    -webkit-clip-path: polygon(100% 1%, 0% 100%, 100% 100%);
-    clip-path: polygon(100% 1%, 0% 100%, 100% 100%);
-    opacity: .4;
-    top: 20%;
-}
-
 .section-hero{
     /*border: 5px solid pink;*/
     position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../img/ironman2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
 }
+
+.section-hero .overlay{
+    opacity: .5;
+}
+
 .section-hero figure{
     position: relative;
 }
 
 .section-hero .title{
-    position: absolute;
-    bottom: 2rem;
-    right: 1rem;
     z-index: 1;
+    opacity: .8;
 }
+
 .section-hero .title span{
     color: white;
     display: block;
@@ -191,6 +213,7 @@ figure{
 }
 .section-hero .title span:last-child{
     font-size: 1.8rem;
+    padding-bottom: 5rem;
 }
 .section-resume-bio{
     /*border: 5px solid red;*/
@@ -231,10 +254,12 @@ figure{
     background-color: var(--brand-black);
     position: relative;
     z-index: -2;
+    padding: 5rem 0;
 }
 
 .section-bio-iron-man .title-section{
     text-align: center;
+    margin-bottom: 4rem;
 }
 .section-explore{
     /*border: 5px solid cyan;*/
@@ -258,6 +283,18 @@ figure{
       grid-template-rows: repeat(10, 1fr);
 }
 
+.img-overlap .overlay,
+.img-overlap .bg-img,
+.split-content > figure > img,
+.gallery .picture-overlay img{
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.section-bg-divider > figure{
+    box-shadow: var(--shadow);
+}
+
 .section-explore  .split-title{
     grid-column-start: 3; 
       grid-row-start: 1; 
@@ -272,33 +309,27 @@ figure{
       display: grid;
       
       grid-template-columns: repeat(5, 1fr); 
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: repeat(8, 1fr);
       padding: 1em;
 }
 
 .split-title > .items-container > .text-1{
-    grid-column-start: 1; 
-      grid-column-end: 4; 
-      grid-row-start: 1; 
-      grid-row-end: 2;
+    grid-column: 1/4;  
+      grid-row: 1/2; 
       display: flex;
       align-items: center;
 }
 
 .split-title > .items-container > .text-2{
-  grid-column-start: 1; 
-  grid-column-end: 5; 
-  grid-row-start: 2; 
-  grid-row-end: 3;  
+  grid-column: 1/5; 
+  grid-row: 2/6;
   display: flex;
   align-items: center;
 }
 
 .split-title > .items-container > .text-3{
-  grid-column-start: 2; 
-  grid-column-end: 6; 
-  grid-row-start: 3; 
-  grid-row-end: 4;  
+  grid-column: 2/6; 
+  grid-row: 5/9; 
   display: flex;
   align-items: center;
   padding-left: 1.3rem;
@@ -369,7 +400,7 @@ figure{
 
 .split-content > .description{
     flex-basis: 55%;
-    padding: 1em 2em;
+    padding: 1em 2em 1rem 0;
 }
 
 .split-content > figure{
@@ -382,6 +413,7 @@ figure{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    box-shadow: var(--shadow);
 }
 
 .cta-description{
@@ -475,15 +507,21 @@ footer .item-3::after {
 .cta-action{
     text-decoration: none;
     color: white;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: .3rem;
     font-weight: bold;
     padding-top: .5rem;
 }
 
+.history h4{
+    font-size: 19px;
+}
+
 .history > h4.border-bottom{
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid var(--border-color); */
     display: inline;
+    padding-bottom: 4px;
+    color: #8a8a8a;
 }
 
 .history > h4 + p{
@@ -497,6 +535,10 @@ footer .item-3::after {
 }
 
 @media (max-width: 768px){
+    .section-resume-bio .text-center{
+        text-align: left;
+    }
+
     .container{
         width: auto;
     }
@@ -516,6 +558,10 @@ footer .item-3::after {
 
     .picture-overlay img{
         min-height: 200px;
+    }
+
+    .picture-overlay .overlay{
+        display: none;
     }
 
     .section-bio-iron-man .spacing{
@@ -548,7 +594,7 @@ footer .item-3::after {
     }
 
     .description ul{
-        padding: 0 0 2.5rem;
+        padding: 0 0 2.5rem 1.2rem;
     }
 
     .title-section{
@@ -568,14 +614,15 @@ footer .item-3::after {
         min-height: 100vh;
     }
 
-    .section-hero .title span:first-child {
+    /* .section-hero .title span:first-child {
         font-size: 1.8rem;
         line-height: 1.8rem;
-    }
+    } */
 
     .section-hero .title span:nth-child(2) {
-        font-size: 2rem;
-        line-height: 2rem;
+        font-size: 3rem;
+        line-height: 2.1rem;
+        margin-top: 1rem;
     }
 
     .section-hero .title{
@@ -584,11 +631,7 @@ footer .item-3::after {
 
     .section-hero .title span:last-child {
         font-size: 1rem;
-        line-height: 1rem;
-    }
-
-    .overlay-diagonal{
-        display: none;
+        line-height: 1.6rem;
     }
 
     .section-bio-iron-man{
@@ -612,7 +655,9 @@ footer .item-3::after {
         flex-direction: row;
         justify-content: space-between;
         align-content: center;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 4rem;
     }
 
     .img-overlap figure {
@@ -653,11 +698,46 @@ footer .item-3::after {
     }
 }
 
+@media (min-width: 998px){
+    .overlay-diagonal{    
+        /* -webkit-clip-path: polygon(100% 1%, 0% 100%, 100% 100%);
+        clip-path: polygon(100% 1%, 0% 100%, 100% 100%); */
+        opacity: .4;
+        /* top: 20%; */
+        display: block;
+    }
+
+    .section-hero .title{
+        position: absolute;
+        bottom: 2rem;
+        right: 1rem;
+        z-index: 1;
+    }
+
+    .section-hero .title span:last-child{
+        padding-bottom: 0;
+    }
+
+    .picture-overlay .overlay{
+        display: block;
+    }
+
+    .gallery .picture-overlay:first-of-type .overlay{
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .gallery .picture-overlay:last-of-type .overlay{
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+}
+
 p{
     line-height: inherit;
 }
 
 body{
-    line-height: 1.6rem;
+    line-height: 2rem;
 }
 
