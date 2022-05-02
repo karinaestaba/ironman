@@ -199,7 +199,7 @@ figure{
 
 .section-hero .title{
     z-index: 1;
-    opacity: .8;
+    /* opacity: .8; */
 }
 
 .section-hero .title span{
@@ -274,6 +274,7 @@ figure{
     display: grid; 
     grid-template-columns: 2fr 1fr; 
     grid-template-areas: "c-imgs c-title";
+    column-gap: 2rem;
 }
 
 .section-explore .img-overlap{
