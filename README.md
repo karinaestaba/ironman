@@ -1,15 +1,19 @@
-# Iron man
+![Screenshot](./screenshot.png)
 
+<hr>
+
+# Project 
 Lab. Tribute page for freecodecamp course.
 
-## Technologies
+## Links
 
-HTML + CSS
+- Live Site URL: [Demo](https://karina-estaba.gitlab.io/ironman)
 
-## Demo 🌐
+## Built with
 
-https://karina-estaba.gitlab.io/ironman
+- Semantic HTML5 markup
+- Mobile-first workflow
 
-### Screenshot
+## Author
 
-![Screenshot](./screenshot.png)
+- Website: [Karina Estaba](https://karina-estaba.gitlab.io/directorio-repositorios/) 🔗
