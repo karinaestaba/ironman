@@ -7,7 +7,7 @@ Lab. Tribute page for freecodecamp course.
 
 ## Links
 
-- Live Site URL: [Demo](https://karina-estaba.gitlab.io/ironman)
+- Live Site URL: [Demo](https://karinaestaba.github.io/ironman)
 
 ## Built with
 
