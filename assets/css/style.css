@@ -22,7 +22,11 @@ body {
 
 ul {
     list-style: none;
-    padding: 0 1rem;
+    padding: 0 1rem;  
+}
+
+ul.animated{
+    animation: slideBottom 1s ease 0s 1 normal forwards;
 }
 
 /** Vars **/
@@ -31,8 +35,8 @@ ul {
     --brand-black: #010101;
     /* --brand-red:   #641312; */
     --brand-red:   #5B0101;
-    --brand-white: #FFFFFF;
-    --brand-gray-l: #F0F0F0;
+    --brand-white: #ACACAC;
+    --brand-gray-l: #C4C4C4;
     --brand-gold:  #B59E5D;
     --border-color: #2b2a2a;
 
@@ -48,6 +52,7 @@ ul {
 html,body{
     box-sizing: border-box;
     height: 100%;
+    background: var(--brand-black);
 }
 
 body{
@@ -199,7 +204,7 @@ figure{
 
 .section-hero .title{
     z-index: 1;
-    /* opacity: .8; */
+    animation: slideFromRight 1s ease 0s 1 normal forwards;
 }
 
 .section-hero .title span{
@@ -226,6 +231,10 @@ figure{
 .section-resume-bio{
     background-color: var(--brand-black);
     white-space: pre-line;
+}
+
+.section-resume-bio .cite.animated{
+    animation: fadeIn 1s ease 0s 1 normal forwards;
 }
 
 .section-memories{
@@ -267,6 +276,16 @@ figure{
     text-align: center;
     margin-bottom: 4rem;
 }
+
+.section-bio-iron-man figure{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-bio-iron-man figure.animated{
+    animation: slideFromRight 1s ease 0s 1 normal forwards;
+}
+
 .section-explore{
     background-color: var(--brand-black);			
 }
@@ -292,8 +311,16 @@ figure{
     box-shadow: var(--shadow);
 }
 
+.gallery .picture-overlay.animated{
+    animation: fadeIn 2s ease 0s 1 normal forwards;
+}
+
 .section-bg-divider > figure{
     box-shadow: var(--shadow);
+}
+
+.section-bg-divider > figure.animated{
+    animation: fadeIn 1s ease 0s 1 normal forwards;
 }
 
 .section-explore  .split-title{
@@ -314,6 +341,10 @@ figure{
 
 .img-overlap figure{
     display: initial;
+}
+
+.img-overlap figure.listening{
+    animation: fadeIn 1s ease 0s 1 normal forwards;
 }
 
 .bg-img{
@@ -389,12 +420,20 @@ figure{
     text-align: center;
 }
 
+.cta-description.animated{
+    animation: slideBottom 1s ease 0s 1 normal forwards;
+}
+
 footer{
     background-color: var(--brand-red);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, minmax(30px, 50px));
     padding-bottom: 2rem;
+}
+
+footer.animated{
+    animation: slideTop 2s ease 0s 1 normal forwards;
 }
 
 footer > div{
@@ -461,6 +500,35 @@ footer .item-3::after {
     bottom: 0;
     transform-origin: left top;
     transform: skewY(6deg);
+}
+
+.credits{
+    text-align: center;
+    background-color: var(--brand-red);
+    color: #8e3f3f;
+    padding-bottom: 1rem;
+    font-size: 12px;
+}
+
+.credits.animated{
+    animation: slideTop 1s ease 0s 1 normal forwards;
+}
+
+.credits a{
+    text-decoration: none;
+    color: #b05959;
+    white-space: nowrap;
+}
+
+.credits a:hover{
+    opacity: .8;
+}
+
+img.icon-link{
+    width: 10px;
+    max-width: 10px;
+    min-width: 10px;
+    display: inline-block;
 }
 
 .sr-only{
@@ -640,6 +708,7 @@ footer .item-3::after {
     .img-overlap figure {
         display: block;
         flex-grow: 1;
+        animation: fadeIn 1s ease 0s 1 normal forwards;
     }
 
     .img-overlap figure:first-child{
@@ -733,3 +802,51 @@ body{
     line-height: 2rem;
 }
 
+@keyframes slideFromRight{
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideBottom {
+    0% {
+        opacity: .5;
+        transform: translateY(-20px); 
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(2px); 
+    } 
+}
+
+@keyframes slideTop {
+    0% {
+		opacity: 0;
+		transform: translateY(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
